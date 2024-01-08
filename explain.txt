@@ -1,0 +1,36 @@
+This Python script generates a word cloud based on the content of a Wikipedia article. It uses the wikipedia library to fetch content from a specified Wikipedia page, and the WordCloud library to create and visualize the word cloud. Here's an explanation of each part of the code:
+
+Importing Libraries:
+
+The script begins by importing the necessary libraries:
+WordCloud: For creating word clouds.
+STOPWORDS: A set of common English words that are often excluded from word clouds.
+ImageColorGenerator: For generating word clouds with custom colors.
+matplotlib.pyplot: For displaying and saving the word cloud.
+wikipedia: For fetching content from Wikipedia.
+sys and warnings: For handling system-related functionalities and suppressing unnecessary warnings.
+
+gen_cloud Function:
+
+This function takes a topic (Wikipedia page title) as input, fetches the content from the corresponding Wikipedia article, and generates a word cloud based on the article's content.
+If an error occurs (such as the topic not being found), the function prints an error message and exits the program.
+It uses the WordCloud class to generate the word cloud, specifying parameters like stopwords, maximum number of words, background color, width, and height.
+The generated word cloud is then returned.
+save_cloud Function:
+
+This function takes a WordCloud object as input and saves it as an image file (in PNG format) in the current directory with the filename "wordcloud.png."
+show_cloud Function:
+
+This function takes a WordCloud object as input and displays it using matplotlib.pyplot.
+The word cloud is displayed without axis labels.
+Driver Code (__main__):
+
+The script prompts the user to input a topic (Wikipedia page title) they want to search.
+It then calls the gen_cloud function to generate the word cloud based on the specified topic.
+The generated word cloud is saved as an image file in the current directory using the save_cloud function.
+The user is asked if they wish to see the output. If the user enters 'y', the word cloud is displayed using the show_cloud function.
+The program exits afterward.
+Note:
+
+The script may encounter issues if the Wikipedia page for the specified topic does not exist or if there are connection issues.
+The word cloud is generated based on the textual content of the Wikipedia article, excluding common English stopwords.
